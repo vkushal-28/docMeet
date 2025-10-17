@@ -115,13 +115,12 @@ export function AvailabilitySettings({ slots }) {
                   availability to start accepting appointments.
                 </p>
               ) : (
-                <div className="space-y-3">
+                <div className="space-y-3 bg-background/40 rounded-lg">
                   {slots.map((slot) => (
                     <div
                       key={slot.id}
-                      className="flex items-center p-3 rounded-md bg-muted/20 border border-emerald-900/20"
-                    >
-                      <div className="bg-emerald-900/20 p-2 rounded-full mr-3">
+                      className="flex items-center p-3 rounded-md border border-emerald-900/20 ">
+                      <div className="bg-emerald-900/30 p-2 rounded-full mr-3">
                         <Clock className="h-4 w-4 text-emerald-400" />
                       </div>
                       <div>
@@ -141,8 +140,7 @@ export function AvailabilitySettings({ slots }) {
 
             <Button
               onClick={() => setShowForm(true)}
-              className="w-full bg-emerald-600 hover:bg-emerald-700"
-            >
+              className="w-full bg-emerald-600 hover:bg-emerald-700">
               <Plus className="h-4 w-4 mr-2" />
               Set Availability Time
             </Button>
@@ -150,9 +148,8 @@ export function AvailabilitySettings({ slots }) {
         ) : (
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="space-y-4 border border-emerald-900/20 rounded-md p-4"
-          >
-            <h3 className="text-lg font-medium text-white mb-2">
+            className="space-y-4 border border-emerald-900/20 rounded-md p-4 bg-background/40">
+            <h3 className="text-lg font-medium text-white mb-4">
               Set Daily Availability
             </h3>
 
@@ -196,15 +193,13 @@ export function AvailabilitySettings({ slots }) {
                 variant="outline"
                 onClick={() => setShowForm(false)}
                 disabled={loading}
-                className="border-emerald-900/30"
-              >
+                className="border-emerald-900/30">
                 Cancel
               </Button>
               <Button
                 type="submit"
                 disabled={loading}
-                className="bg-emerald-600 hover:bg-emerald-700"
-              >
+                className="bg-emerald-600 hover:bg-emerald-700">
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -218,7 +213,7 @@ export function AvailabilitySettings({ slots }) {
           </form>
         )}
 
-        <div className="mt-6 p-4 bg-muted/10 border border-emerald-900/10 rounded-md">
+        <div className="mt-6 p-4 bg-background/40 border border-emerald-900/30 rounded-md">
           <h4 className="font-medium text-white mb-2 flex items-center">
             <AlertCircle className="h-4 w-4 mr-2 text-emerald-400" />
             How Availability Works

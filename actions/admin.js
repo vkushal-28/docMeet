@@ -70,8 +70,6 @@ export async function getVerifiedDoctors() {
       },
     });
 
-    console.log("verifiedDoctors", verifiedDoctors);
-
     return { doctors: verifiedDoctors };
   } catch (error) {
     console.error("Failed to get verified doctors:", error);

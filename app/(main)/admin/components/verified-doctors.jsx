@@ -65,7 +65,7 @@ export function VerifiedDoctors({ doctors }) {
 
   return (
     <div>
-      <Card className="bg-muted/20 border-emerald-900/20">
+      <Card className=" border-emerald-900/20">
         <CardHeader>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
@@ -80,7 +80,7 @@ export function VerifiedDoctors({ doctors }) {
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search doctors..."
-                className="pl-8 bg-background border-emerald-900/20"
+                className="pl-8 bg-background/40 border-emerald-900/20"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -90,20 +90,22 @@ export function VerifiedDoctors({ doctors }) {
 
         <CardContent>
           {filteredDoctors.length === 0 ? (
-            <div className="text-center py-8 text-muted-foreground">
-              {searchTerm
-                ? "No doctors match your search criteria."
-                : "No verified doctors available."}
+            <div className="text-center py-8 h-[300px] flex justify-center items-center text-muted-foreground">
+              <p>
+                {searchTerm
+                  ? "No doctors match your search criteria."
+                  : "No verified doctors available."}
+              </p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <div className="space-y-3">
               {filteredDoctors.map((doctor) => {
                 const isSuspended = doctor.verificationStatus === "REJECTED";
                 return (
                   <Card
                     key={doctor.id}
-                    className="bg-background border-emerald-900/20 hover:border-emerald-700/30 transition-all">
-                    <CardContent className="p-4">
+                    className="bg-background/40 border-emerald-700/20 hover:border-emerald-700/50 transition-all ">
+                    <CardContent className="px-4">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div className="flex items-center gap-3">
                           <div className="bg-muted/20 rounded-full p-2">

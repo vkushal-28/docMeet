@@ -77,7 +77,7 @@ export function PendingPayouts({ payouts }) {
 
   return (
     <div>
-      <Card className="bg-muted/20 border-emerald-900/20">
+      <Card className=" border-emerald-900/20">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-white">
             Pending Payouts
@@ -88,83 +88,81 @@ export function PendingPayouts({ payouts }) {
         </CardHeader>
         <CardContent>
           {payouts.length === 0 ? (
-            <div className="text-center py-8 text-muted-foreground">
-              No pending payout requests at this time.
+            <div className="flex items-center justify-center h-[300px]  text-muted-foreground">
+              <p> No pending payout requests at this time.</p>
             </div>
           ) : (
             <div className="space-y-4">
-              {payouts.map((payout) => (
-                <Card
-                  key={payout.id}
-                  className="bg-background border-emerald-900/20 hover:border-emerald-700/30 transition-all"
-                >
-                  <CardContent className="p-4">
-                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-                      <div className="flex items-start gap-3">
-                        <div className="bg-muted/20 rounded-full p-2 mt-1">
-                          <User className="h-5 w-5 text-emerald-400" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-medium text-white">
-                            Dr. {payout.doctor.name}
-                          </h3>
-                          <p className="text-sm text-muted-foreground">
-                            {payout.doctor.specialty}
-                          </p>
-                          <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-muted-foreground">
-                            <div className="flex items-center">
-                              <DollarSign className="h-4 w-4 mr-1 text-emerald-400" />
-                              <span>
-                                {payout.credits} credits • $
-                                {payout.netAmount.toFixed(2)}
-                              </span>
-                            </div>
-                            <div className="flex items-center">
-                              <Mail className="h-4 w-4 mr-1 text-emerald-400" />
-                              <span className="text-xs">
-                                {payout.paypalEmail}
-                              </span>
-                            </div>
+              {payouts.map((payout) => {
+                return (
+                  <Card
+                    key={payout.id}
+                    className="bg-background/40 border-emerald-900/20 hover:border-emerald-700/30 transition-all">
+                    <CardContent className="px-4">
+                      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-emerald-700/20 rounded-full p-2 mt-1">
+                            <User className="h-5 w-5 text-emerald-400" />
                           </div>
-                          <p className="text-xs text-muted-foreground mt-1">
-                            Requested{" "}
-                            {format(
-                              new Date(payout.createdAt),
-                              "MMM d, yyyy 'at' h:mm a"
-                            )}
-                          </p>
+                          <div className="flex-1">
+                            <h3 className="font-medium text-white">
+                              Dr. {payout.doctor.name}
+                            </h3>
+                            <p className="text-sm text-muted-foreground">
+                              {payout.doctor.specialty}
+                            </p>
+                            <div className="flex flex-wrap items-center gap-4 mt-2 text-sm text-muted-foreground">
+                              <div className="flex items-center">
+                                <DollarSign className="h-4 w-4 mr-1 text-emerald-400" />
+                                <span>
+                                  {payout.credits} credits • $
+                                  {payout.netAmount.toFixed(2)}
+                                </span>
+                              </div>
+                              <div className="flex items-center">
+                                <Mail className="h-4 w-4 mr-1 text-emerald-400" />
+                                <span className="text-xs">
+                                  {payout.paypalEmail}
+                                </span>
+                              </div>
+                            </div>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              Requested{" "}
+                              {format(
+                                new Date(payout.createdAt),
+                                "MMM d, yyyy 'at' h:mm a"
+                              )}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="flex flex-col sm:flex-row gap-2 self-end lg:self-center">
-                        <Badge
-                          variant="outline"
-                          className="bg-amber-900/20 border-amber-900/30 text-amber-400 w-fit"
-                        >
-                          Pending
-                        </Badge>
-                        <div className="flex gap-2">
-                          <Button
+                        <div className="flex flex-col sm:flex-row gap-2 self-end lg:self-center">
+                          <Badge
                             variant="outline"
-                            size="sm"
-                            onClick={() => handleViewDetails(payout)}
-                            className="border-emerald-900/30 hover:bg-muted/80"
-                          >
-                            View Details
-                          </Button>
-                          <Button
-                            size="sm"
-                            onClick={() => handleApprovePayout(payout)}
-                            className="bg-emerald-600 hover:bg-emerald-700"
-                          >
-                            <Check className="h-4 w-4 mr-1" />
-                            Approve
-                          </Button>
+                            className="bg-amber-900/20 border-amber-900/30 text-amber-400 w-fit">
+                            Pending
+                          </Badge>
+                          <div className="flex gap-2">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => handleViewDetails(payout)}
+                              className="border-emerald-900/30 hover:bg-muted/80">
+                              View Details
+                            </Button>
+                            <Button
+                              size="sm"
+                              onClick={() => handleApprovePayout(payout)}
+                              className="bg-emerald-600 hover:bg-emerald-700">
+                              <Check className="h-4 w-4 mr-1" />
+                              Approve
+                            </Button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           )}
         </CardContent>
@@ -288,8 +286,7 @@ export function PendingPayouts({ payouts }) {
               <Button
                 variant="outline"
                 onClick={closeDialogs}
-                className="border-emerald-900/30"
-              >
+                className="border-emerald-900/30">
                 Close
               </Button>
               <Button
@@ -297,8 +294,7 @@ export function PendingPayouts({ payouts }) {
                 disabled={
                   selectedPayout.doctor.credits < selectedPayout.credits
                 }
-                className="bg-emerald-600 hover:bg-emerald-700"
-              >
+                className="bg-emerald-600 hover:bg-emerald-700">
                 <Check className="h-4 w-4 mr-1" />
                 Approve Payout
               </Button>
@@ -311,8 +307,7 @@ export function PendingPayouts({ payouts }) {
       {showApproveDialog && selectedPayout && (
         <Dialog
           open={showApproveDialog}
-          onOpenChange={() => setShowApproveDialog(false)}
-        >
+          onOpenChange={() => setShowApproveDialog(false)}>
           <DialogContent>
             <DialogHeader>
               <DialogTitle className="text-xl font-bold text-white">
@@ -368,15 +363,13 @@ export function PendingPayouts({ payouts }) {
                 variant="outline"
                 onClick={() => setShowApproveDialog(false)}
                 disabled={loading}
-                className="border-emerald-900/30"
-              >
+                className="border-emerald-900/30">
                 Cancel
               </Button>
               <Button
                 onClick={confirmApproval}
                 disabled={loading}
-                className="bg-emerald-600 hover:bg-emerald-700"
-              >
+                className="bg-emerald-600 hover:bg-emerald-700">
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

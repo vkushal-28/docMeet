@@ -56,7 +56,7 @@ export function PendingDoctors({ doctors = [] }) {
   // --- Render: Empty State ---
   if (doctors.length === 0) {
     return (
-      <Card className="bg-muted/20 border-emerald-900/20">
+      <Card className="border-emerald-900/20">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-white">
             Pending Doctor Verifications
@@ -65,10 +65,8 @@ export function PendingDoctors({ doctors = [] }) {
             Review and approve doctor applications
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <div className="text-center py-8 text-muted-foreground">
-            No pending verification requests at this time.
-          </div>
+        <CardContent className=" py-8 text-muted-foreground flex items-center justify-center h-[300px] ">
+          <div>No pending verification requests at this time.</div>
         </CardContent>
       </Card>
     );
@@ -77,7 +75,7 @@ export function PendingDoctors({ doctors = [] }) {
   return (
     <div>
       {/* Pending Doctor List */}
-      <Card className="bg-muted/20 border-emerald-900/20">
+      <Card className="bg-background/40 border-emerald-900/20">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-white">
             Pending Doctor Verifications

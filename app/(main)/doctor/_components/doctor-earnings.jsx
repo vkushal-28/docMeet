@@ -77,7 +77,7 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
     <div className="space-y-6">
       {/* Earnings Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card className="border-emerald-900/20">
+        <Card className="border-emerald-900/20 ">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
@@ -151,16 +151,16 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
       </div>
 
       {/* Payout Section */}
-      <Card className="border-emerald-900/20">
+      <Card className="border-emerald-900/20 ">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-white flex items-center">
             <CreditCard className="h-5 w-5 mr-2 text-emerald-400" />
             Payout Management
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-4 ">
           {/* Current Payout Status */}
-          <div className="bg-muted/20 p-4 rounded-lg border border-emerald-900/20">
+          <div className="p-4 rounded-lg border border-emerald-900/20 bg-background/40 ">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-lg font-medium text-white">
                 Available for Payout
@@ -168,15 +168,13 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
               {pendingPayout ? (
                 <Badge
                   variant="outline"
-                  className="bg-amber-900/20 border-amber-900/30 text-amber-400"
-                >
+                  className="bg-amber-900/20 border-amber-900/30 text-amber-400">
                   PROCESSING
                 </Badge>
               ) : (
                 <Badge
                   variant="outline"
-                  className="bg-emerald-900/20 border-emerald-900/30 text-emerald-400"
-                >
+                  className="bg-emerald-900/20 border-emerald-900/30 text-emerald-400">
                   Available
                 </Badge>
               )}
@@ -204,7 +202,7 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
                     </p>
                   </div>
                 </div>
-                <Alert>
+                <Alert className="bg-muted/5">
                   <AlertCircle className="h-4 w-4" />
                   <AlertDescription className="text-sm">
                     Your payout request is being processed. You'll receive the
@@ -237,8 +235,7 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
             {!pendingPayout && availableCredits > 0 && (
               <Button
                 onClick={() => setShowPayoutDialog(true)}
-                className="w-full mt-4 bg-emerald-600 hover:bg-emerald-700"
-              >
+                className="w-full mt-4 bg-emerald-600 hover:bg-emerald-700">
                 Request Payout for All Credits
               </Button>
             )}
@@ -254,7 +251,7 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
           </div>
 
           {/* Payout Information */}
-          <Alert>
+          <Alert className="bg-background/40">
             <AlertCircle className="h-4 w-4" />
             <AlertDescription className="text-sm">
               <strong>Payout Structure:</strong> You earn $8 per credit.
@@ -265,14 +262,13 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
 
           {/* Payout History */}
           {payouts.length > 0 && (
-            <div className="space-y-2">
+            <div className="space-y-2 ">
               <h3 className="text-lg font-medium text-white">Payout History</h3>
               <div className="space-y-2">
                 {payouts.slice(0, 5).map((payout) => (
                   <div
                     key={payout.id}
-                    className="flex items-center justify-between p-3 rounded-md bg-muted/10 border border-emerald-900/10"
-                  >
+                    className="flex items-center justify-between p-3 rounded-md bg-background/40 border border-emerald-900/10">
                     <div>
                       <p className="text-white font-medium">
                         {format(new Date(payout.createdAt), "MMM d, yyyy")}
@@ -291,8 +287,7 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
                         payout.status === "PROCESSED"
                           ? "bg-emerald-900/20 border-emerald-900/30 text-emerald-400"
                           : "bg-amber-900/20 border-amber-900/30 text-amber-400"
-                      }
-                    >
+                      }>
                       {payout.status}
                     </Badge>
                   </div>
@@ -315,8 +310,8 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
             </DialogDescription>
           </DialogHeader>
 
-          <form onSubmit={handlePayoutRequest} className="space-y-4">
-            <div className="bg-muted/20 p-4 rounded-lg space-y-2">
+          <form onSubmit={handlePayoutRequest} className="space-y-4 ">
+            <div className="bg-muted/30 p-4 rounded-lg space-y-2">
               <div className="flex justify-between">
                 <span className="text-muted-foreground">
                   Available credits:
@@ -374,15 +369,13 @@ export function DoctorEarnings({ earnings, payouts = [] }) {
                 variant="outline"
                 onClick={() => setShowPayoutDialog(false)}
                 disabled={loading}
-                className="border-emerald-900/30"
-              >
+                className="border-emerald-900/30">
                 Cancel
               </Button>
               <Button
                 type="submit"
                 disabled={loading}
-                className="bg-emerald-600 hover:bg-emerald-700"
-              >
+                className="bg-emerald-600 hover:bg-emerald-700">
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />

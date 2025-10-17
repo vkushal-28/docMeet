@@ -56,7 +56,7 @@ export default async function Header() {
               <Link href="/doctor">
                 <Button
                   variant="outline"
-                  className="hidden md:inline-flex items-center gap-2">
+                  className="hidden md:inline-flex items-center gap-2 ">
                   <Stethoscope className="h-4 w-4" />
                   Doctor Dashboard
                 </Button>

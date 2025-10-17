@@ -9,10 +9,10 @@ import { SPECIALTIES } from "@/lib/specialities";
  */
 const SpecialtyCard = React.memo(({ specialty }) => (
   <Link href={`/doctors/${specialty.name}`}>
-    <Card className="hover:border-emerald-700/40 transition-all cursor-pointer border-emerald-900/20 h-full">
-      <CardContent className="p-6 flex flex-col items-center justify-center text-center h-full">
+    <Card className=" border-emerald-700/20 hover:border-emerald-700/50 transition-all duration-300  hover:shadow-lg hover:shadow-emerald-900/50 bg-muted/70 ">
+      <CardContent className="p-5 flex flex-col items-center justify-center text-center h-full">
         <div className="w-14 h-14 rounded-full bg-emerald-900/20 flex items-center justify-center mb-4">
-          <div className="text-emerald-400">{specialty.icon}</div>
+          <div className="text-emerald-400 ">{specialty.icon}</div>
         </div>
         <h3 className="font-medium text-white">{specialty.name}</h3>
       </CardContent>

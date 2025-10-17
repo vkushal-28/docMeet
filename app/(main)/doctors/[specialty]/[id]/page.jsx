@@ -1,6 +1,7 @@
 import { getDoctorById, getAvailableTimeSlots } from "@/actions/appointments";
 import { DoctorProfile } from "./_components/doctor-profile";
 import { redirect } from "next/navigation";
+import { toast } from "sonner";
 
 export default async function DoctorProfilePage({ params }) {
   const { id } = await params;
@@ -19,7 +20,8 @@ export default async function DoctorProfilePage({ params }) {
       />
     );
   } catch (error) {
-    console.error("Error loading doctor profile:", error);
+    console.error("Error loading doctor profile:", error.message);
+    // toast.success("error");
     redirect("/doctors");
   }
 }

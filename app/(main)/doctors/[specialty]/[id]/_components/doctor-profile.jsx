@@ -59,8 +59,6 @@ export function DoctorProfile({ doctor, availableDays }) {
     router.push("/appointments");
   };
 
-  console.log("availableDays", availableDays);
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* Left column - Doctor Photo and Quick Info (fixed on scroll) */}
@@ -208,7 +206,7 @@ export function DoctorProfile({ doctor, availableDays }) {
                 ) : (
                   <div className="text-center py-6">
                     <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
-                    <h3 className="text-xl font-medium text-white mb-2">
+                    <h3 className="text-xl font-medium text-white mb-5">
                       No available slots
                     </h3>
                     <p className="text-muted-foreground">

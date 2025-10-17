@@ -228,8 +228,8 @@ export function AppointmentCard({
 
   return (
     <>
-      <Card className="border-emerald-900/20 hover:border-emerald-700/30 transition-all">
-        <CardContent className="p-4">
+      <Card className="border-emerald-900/40 hover:border-emerald-700/40 transition-all bg-background/30 hover:shadow-lg hover:shadow-emerald-900/30">
+        <CardContent className="px-4">
           <div className="flex flex-col md:flex-row justify-between gap-4">
             <div className="flex items-start gap-3">
               <div className="bg-muted/20 rounded-full p-2 mt-1">
@@ -273,8 +273,7 @@ export function AppointmentCard({
                     : appointment.status === "CANCELLED"
                     ? "bg-red-900/20 border-red-900/30 text-red-400"
                     : "bg-amber-900/20 border-amber-900/30 text-amber-400"
-                }
-              >
+                }>
                 {appointment.status}
               </Badge>
               <div className="flex gap-2 mt-2 flex-wrap">
@@ -283,8 +282,7 @@ export function AppointmentCard({
                     size="sm"
                     onClick={handleMarkCompleted}
                     disabled={completeLoading}
-                    className="bg-emerald-600 hover:bg-emerald-700"
-                  >
+                    className="bg-emerald-600 hover:bg-emerald-700">
                     {completeLoading ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
                     ) : (
@@ -299,8 +297,7 @@ export function AppointmentCard({
                   size="sm"
                   variant="outline"
                   className="border-emerald-900/30"
-                  onClick={() => setOpen(true)}
-                >
+                  onClick={() => setOpen(true)}>
                   View Details
                 </Button>
               </div>
@@ -311,7 +308,7 @@ export function AppointmentCard({
 
       {/* Appointment Details Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-2xl">
+        <DialogContent className="max-w-2xl ">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold text-white">
               Appointment Details
@@ -323,7 +320,7 @@ export function AppointmentCard({
             </DialogDescription>
           </DialogHeader>
 
-          <div className="space-y-4 py-4">
+          <div className="space-y-4 py-4 ">
             {/* Other Party Information */}
             <div className="space-y-2">
               <h4 className="text-sm font-medium text-muted-foreground">
@@ -388,8 +385,7 @@ export function AppointmentCard({
                     : appointment.status === "CANCELLED"
                     ? "bg-red-900/20 border-red-900/30 text-red-400"
                     : "bg-amber-900/20 border-amber-900/30 text-amber-400"
-                }
-              >
+                }>
                 {appointment.status}
               </Badge>
             </div>
@@ -421,8 +417,7 @@ export function AppointmentCard({
                   disabled={
                     !isAppointmentActive() || action === "video" || tokenLoading
                   }
-                  onClick={handleJoinVideoCall}
-                >
+                  onClick={handleJoinVideoCall}>
                   {tokenLoading || action === "video" ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -453,8 +448,7 @@ export function AppointmentCard({
                       variant="ghost"
                       size="sm"
                       onClick={() => setAction("notes")}
-                      className="h-7 text-emerald-400 hover:text-emerald-300 hover:bg-emerald-900/20"
-                    >
+                      className="h-7 text-emerald-400 hover:text-emerald-300 hover:bg-emerald-900/20">
                       <Edit className="h-3.5 w-3.5 mr-1" />
                       {appointment.notes ? "Edit" : "Add"}
                     </Button>
@@ -479,16 +473,14 @@ export function AppointmentCard({
                         setNotes(appointment.notes || "");
                       }}
                       disabled={notesLoading}
-                      className="border-emerald-900/30"
-                    >
+                      className="border-emerald-900/30">
                       Cancel
                     </Button>
                     <Button
                       size="sm"
                       onClick={handleSaveNotes}
                       disabled={notesLoading}
-                      className="bg-emerald-600 hover:bg-emerald-700"
-                    >
+                      className="bg-emerald-600 hover:bg-emerald-700">
                       {notesLoading ? (
                         <>
                           <Loader2 className="mr-2 h-3.5 w-3.5 animate-spin" />
@@ -523,8 +515,7 @@ export function AppointmentCard({
                 <Button
                   onClick={handleMarkCompleted}
                   disabled={completeLoading}
-                  className="bg-emerald-600 hover:bg-emerald-700"
-                >
+                  className="bg-emerald-600 hover:bg-emerald-700">
                   {completeLoading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -545,8 +536,7 @@ export function AppointmentCard({
                   variant="outline"
                   onClick={handleCancelAppointment}
                   disabled={cancelLoading}
-                  className="border-red-900/30 text-red-400 hover:bg-red-900/10 mt-3 sm:mt-0"
-                >
+                  className="border-red-900/30 text-red-400 hover:bg-red-900/10 mt-3 sm:mt-0">
                   {cancelLoading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -564,8 +554,7 @@ export function AppointmentCard({
 
             <Button
               onClick={() => setOpen(false)}
-              className="bg-emerald-600 hover:bg-emerald-700"
-            >
+              className="bg-emerald-600 hover:bg-emerald-700">
               Close
             </Button>
           </DialogFooter>

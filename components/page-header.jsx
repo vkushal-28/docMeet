@@ -23,8 +23,7 @@ export function PageHeader({
         <Button
           variant="outline"
           size="sm"
-          className="mb-2 border-emerald-900/30"
-        >
+          className="mb-2 cursor-pointer border-emerald-900/30">
           <ArrowLeft className="h-4 w-4 mr-2" />
           {backLabel}
         </Button>
@@ -33,11 +32,11 @@ export function PageHeader({
         {icon && (
           <div className="text-emerald-400">
             {React.cloneElement(icon, {
-              className: "h-12 md:h-14 w-12 md:w-14",
+              className: "h-10 md:h-12 w-12 md:w-12",
             })}
           </div>
         )}
-        <h1 className="text-4xl md:text-5xl gradient-title">{title}</h1>
+        <h1 className="text-4xl md:text-3xl gradient-title">{title}</h1>
       </div>
     </div>
   );

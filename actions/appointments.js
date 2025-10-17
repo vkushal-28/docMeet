@@ -306,9 +306,9 @@ export async function getAvailableTimeSlots(doctorId) {
       },
     });
 
-    if (!availability) {
-      throw new Error("No availability set by doctor");
-    }
+    // if (!availability) {
+    //   throw new Error("No availability set by doctor");
+    // }
 
     // Get the next 4 days
     const now = new Date();
@@ -334,8 +334,8 @@ export async function getAvailableTimeSlots(doctorId) {
       availableSlotsByDay[dayString] = [];
 
       // Create a copy of the availability start/end times for this day
-      const availabilityStart = new Date(availability.startTime);
-      const availabilityEnd = new Date(availability.endTime);
+      const availabilityStart = new Date(availability?.startTime);
+      const availabilityEnd = new Date(availability?.endTime);
 
       // Set the day to the current day we're processing
       availabilityStart.setFullYear(

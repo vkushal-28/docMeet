@@ -81,7 +81,7 @@ export default function Home() {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="bg-card border-emerald-700/20 hover:border-emerald-700/60 transition-all duration-300 shadow-lg shadow-emerald-900/30 hover:shadow-emerald-900/80">
+                className="bg-card border-emerald-700/20 hover:border-emerald-900/20 transition-all duration-300 shadow-lg hover:shadow-emerald-900/80">
                 <CardHeader className="pb-2">
                   <div className="bg-emerald-800/25 p-3 rounded-lg w-fit mb-4">
                     {feature.icon}
@@ -122,7 +122,7 @@ export default function Home() {
             <Pricing />
 
             {/* Description */}
-            <Card className="mt-12 bg-muted/20 border-emerald-900/30">
+            <Card className="mt-12 bg-muted/35 border-emerald-900/30">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-white flex items-center">
                   <Stethoscope className="h-5 w-5 mr-2 text-emerald-400" />
@@ -133,7 +133,7 @@ export default function Home() {
                 <ul className="space-y-3">
                   {creditBenefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="mr-3 mt-1 bg-emerald-900/20 p-1 rounded-full">
+                      <div className="mr-3 mt-1 bg-emerald-700/20 p-1 rounded-full">
                         <svg
                           className="h-4 w-4 text-emerald-400"
                           fill="none"
@@ -182,7 +182,7 @@ export default function Home() {
               <Card
                 key={index}
                 className="border-emerald-900/20 hover:border-emerald-800/40 transition-all">
-                <CardContent className="pt-6">
+                <CardContent className="">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-full bg-emerald-800/20 flex items-center justify-center mr-4">
                       <span className="text-emerald-400 font-bold">
@@ -248,7 +248,7 @@ export default function Home() {
       </section> */}
       <section className="py-20 ">
         <div className="container mx-auto px-4">
-          <div className="relative isolate overflow-hidden bg-emerald-950/60 py-8 sm:py-12 lg:py-16 rounded-2xl ">
+          <div className="relative isolate overflow-hidden bg-emerald-950/70 py-8 sm:py-12 lg:py-16 rounded-2xl ">
             <div className="mx-auto px-4 lg:px-14 ">
               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8  lg:max-w-none ">
                 <div className="max-w-2xl relative z-10">

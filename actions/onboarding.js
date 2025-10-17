@@ -10,7 +10,6 @@ import { revalidatePath } from "next/cache";
 export async function setUserRole(formData) {
   const { userId } = await auth();
 
-  console.log("first", userId);
   if (!userId) {
     throw new Error("Unauthorized");
   }

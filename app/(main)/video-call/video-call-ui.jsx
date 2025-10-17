@@ -49,9 +49,9 @@ export default function VideoCall({ sessionId, token }) {
       return;
     }
 
-    console.log({ appId, sessionId, token });
+    // console.log({ appId, sessionId, token });
 
-    console.log(appId, sessionId);
+    // console.log(appId, sessionId);
     try {
       // Initialize the session
       sessionRef.current = window.OT.initSession(appId, sessionId);
