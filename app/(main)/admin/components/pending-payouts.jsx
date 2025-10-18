@@ -77,7 +77,7 @@ export function PendingPayouts({ payouts }) {
 
   return (
     <div>
-      <Card className=" border-emerald-900/20">
+      <Card className=" border-gray-200/10">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-white">
             Pending Payouts
@@ -97,7 +97,7 @@ export function PendingPayouts({ payouts }) {
                 return (
                   <Card
                     key={payout.id}
-                    className="bg-background/40 border-emerald-900/20 hover:border-emerald-700/30 transition-all">
+                    className="bg-background/40 border-gray-200/15 hover:border-emerald-700/40 transition-all">
                     <CardContent className="px-4">
                       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                         <div className="flex items-start gap-3">

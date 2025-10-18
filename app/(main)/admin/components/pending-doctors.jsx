@@ -56,7 +56,7 @@ export function PendingDoctors({ doctors = [] }) {
   // --- Render: Empty State ---
   if (doctors.length === 0) {
     return (
-      <Card className="border-emerald-900/20">
+      <Card className="border-gray-200/10">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-white">
             Pending Doctor Verifications
@@ -75,7 +75,7 @@ export function PendingDoctors({ doctors = [] }) {
   return (
     <div>
       {/* Pending Doctor List */}
-      <Card className="bg-background/40 border-emerald-900/20">
+      <Card className="bg-background/40 border-gray-200/10">
         <CardHeader>
           <CardTitle className="text-xl font-bold text-white">
             Pending Doctor Verifications
@@ -90,7 +90,7 @@ export function PendingDoctors({ doctors = [] }) {
             {doctors.map((doctor) => (
               <Card
                 key={doctor.id}
-                className="bg-background border-emerald-900/20 hover:border-emerald-700/30 transition-all">
+                className="bg-background border-gray-200/15 hover:border-emerald-700/30 transition-all">
                 <CardContent className="p-4">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     {/* Doctor Basic Info */}
